@@ -20,10 +20,12 @@ Es importante incorporarle al productor la vulnerabilidad y amenaza que se desea
 
   Terminal 1:
 > cd kafka-3.4.0-src
+
 > bin/zookeeper-server-start.sh config/zookeeper.properties
 
   Terminal 2:
 > cd kafka-3.4.0-src
+
 > bin/kafka-server-start.sh config/server.properties
 >
   Terminal 3:
