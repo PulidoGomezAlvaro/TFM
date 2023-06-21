@@ -1,11 +1,8 @@
 ﻿Codigo,Probabilidad,Impacto,Activo,Descripcion
-NATUR-01,1,9,Hardware;dispositivos y equipos,Posibilidad de incendio en un entorno confinado
-INDUS-05,2,4,Software y aplicaciones,Defectos en el sistema que afectan a su funcionamiento
-INDUS-06,2,9,Hardware;dispositivos y equipos,Interrupción del suministro eléctrico
-ERR-01,4,6,Infraestructura organizativa,Errores del usuario
-ERR-19,4,8,Personal,Posible fuga de información
-WIL-05,3,8,Software y aplicaciones,Enmascaramiento de la identidad
-WIL-14,2,9,Infraestructura organizativa,Espionaje
-SR-07,3,6,Infraestructura organizativa,Fallo de aislamiento
-
-WIL-30,3,8,Personal,Ingenieria social
+NATUR-01,1,9,Hardware/Físico,Posibilidad de incendio en un entorno confinado
+INDUS-05,2,4,Software,Defectos en el sistema que afectan a su funcionamiento
+INDUS-06,2,9,Hardware/Físico,Interrupción del suministro eléctrico
+WIL-05,3,8,Software,Enmascaramiento de la identidad
+ERR-04,2,6,Software,Errores de configuración
+ERR-15,3,6,Datos/Información,Alteración de la información
+WIL-11,3,8,Datos/Información,Acceso no autorizado

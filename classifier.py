@@ -10,27 +10,27 @@ onto = get_ontology("http://www.tfm.com/ontologies/tfm.owl").load()
 matriz_riesgo_MAGERIT = {
     ('MB', 'MB'): 'MB',
     ('MB', 'B'): 'MB',
-    ('MB', 'M'): 'MMB',
-    ('MB', 'A'): 'B',
-    ('MB', 'MA'): 'B',
+    ('MB', 'M'): 'B',
+    ('MB', 'A'): 'M',
+    ('MB', 'MA'): 'A',
     ('B', 'MB'): 'MB',
     ('B', 'B'): 'B',
-    ('B', 'M'): 'B',
-    ('B', 'A'): 'M',
-    ('B', 'MA'): 'M',
-    ('M', 'MB'): 'B',
-    ('M', 'B'): 'M',
+    ('B', 'M'): 'M',
+    ('B', 'A'): 'A',
+    ('B', 'MA'): 'MA',
+    ('M', 'MB'): 'MB',
+    ('M', 'B'): 'B',
     ('M', 'M'): 'M',
     ('M', 'A'): 'A',
-    ('M', 'MA'): 'A',
-    ('A', 'MB'): 'M',
-    ('A', 'B'): 'A',
+    ('M', 'MA'): 'MA',
+    ('A', 'MB'): 'B',
+    ('A', 'B'): 'M',
     ('A', 'M'): 'A',
-    ('A', 'A'): 'A',
+    ('A', 'A'): 'MA',
     ('A', 'MA'): 'MA',
-    ('MA', 'MB'): 'A',
-    ('MA', 'B'): 'MA',
-    ('MA', 'M'): 'MA',
+    ('MA', 'MB'): 'B',
+    ('MA', 'B'): 'M',
+    ('MA', 'M'): 'A',
     ('MA', 'A'): 'MA',
     ('MA', 'MA'): 'MA'
 }
@@ -63,14 +63,14 @@ matriz_medida_MAGERIT = {
 }
 matriz_mitigacion_MAGERIT = {
     ('0.1', 'MB'): 'MB',
-    ('0.1', 'B'): 'MB',
+    ('0.1', 'B'): 'B',
     ('0.1', 'M'): 'M',
     ('0.1', 'A'): 'A',
     ('0.1', 'MA'): 'MA',
     ('0.2', 'MB'): 'MB',
     ('0.2', 'B'): 'B',
     ('0.2', 'M'): 'M',
-    ('0.2', 'A'): 'M',
+    ('0.2', 'A'): 'A',
     ('0.2', 'MA'): 'A',
     ('0.3', 'MB'): 'MB',
     ('0.3', 'B'): 'B',
@@ -78,7 +78,7 @@ matriz_mitigacion_MAGERIT = {
     ('0.3', 'A'): 'M',
     ('0.3', 'MA'): 'A',
     ('0.4', 'MB'): 'MB',
-    ('0.4', 'B'): 'MB',
+    ('0.4', 'B'): 'B',
     ('0.4', 'M'): 'B',
     ('0.4', 'A'): 'M',
     ('0.4', 'MA'): 'M',
@@ -91,12 +91,12 @@ matriz_mitigacion_MAGERIT = {
     ('0.6', 'B'): 'MB',
     ('0.6', 'M'): 'B',
     ('0.6', 'A'): 'B',
-    ('0.6', 'MA'): 'B',
+    ('0.6', 'MA'): 'M',
     ('0.7', 'MB'): 'MB',
     ('0.7', 'B'): 'MB',
     ('0.7', 'M'): 'MB',
     ('0.7', 'A'): 'B',
-    ('0.7', 'MA'): 'B',
+    ('0.7', 'MA'): 'M',
     ('0.8', 'MB'): 'MB',
     ('0.8', 'B'): 'MB',
     ('0.8', 'M'): 'MB',
@@ -165,6 +165,7 @@ with onto:
             
             # Crear una instancia de la clase Riesgo y establecer la relación con la Amenaza
             riesgo = onto.Riesgo(URIRef("http://www.tfm.com/ontologies/tfm.owl#Riesgo_"+row['Codigo']))
+            riesgo.esGeneradoPor.append(vulnerabilidad)
 
             # Establecer el valor del data property tieneNivel del Riesgo
             if magerit or cramm2:
@@ -548,8 +549,10 @@ with onto:
                                 amenaza.esAmenazaExterna.append(True)
                             vulnerabilidad = onto.Vulnerabilidad(URIRef("http://www.tfm.com/ontologies/tfm.owl#" + row['Codigo']))
                             amenaza.explota.append(vulnerabilidad)
+
                             for activo in vulnerabilidad.afectaA:
                                 print(activo)
+                                amenaza.afectaA.append(activo)
                                 if magerit or cramm2:
                                     impacto = row['Impacto']
                                     if row2['Integridad'] == '1' and  not hasattr(activo, "esActivodeSoporte") and not len(activo.tieneValordeIntegridad) == 0 :
@@ -628,10 +631,6 @@ with onto:
                                         activo.tieneValorTotal[0] = float(activo.tieneValordeIntegridad[0])+float(activo.tieneValordeConfidencialidad[0])+float(activo.tieneValordeDisponibilidad[0])
                                         activo.tieneValorTotal[0] = round(activo.tieneValorTotal[0],2)
 
-
-                            for riesgo in onto.Riesgo.instances():
-                                if str(riesgo).endswith(row2['Vulnerabilidad']):
-                                    riesgo.esGeneradoPor.append(amenaza)
 
 
     # Ejecutar el razonador y guardar la ontología

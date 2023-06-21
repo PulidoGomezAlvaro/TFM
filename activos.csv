@@ -1,11 +1,11 @@
-Activo,Categoria,ActivosDeSoporte,Responsable,ValorIntegridad,ValorConfidencialidad,ValorDisponibilidad,ValorTotal
-Proceso de fabricación de productos,Procesos empresariales;funciones;servicios,Personal_Infraestructura organizativa,Departamento de Producción,2,4,4,10
-Base de datos de clientes,Datos/Información,Software y aplicaciones_Personal,Departamento de Marketing,4,4,2,10
-Servidor de correo electrónico,Procesos empresariales;funciones;servicios,Hardware;dispositivos y equipos_Software y aplicaciones,Departamento de TI,2,2,4,8
-Sistema de gestión de inventario,Procesos empresariales;funciones;servicios,Hardware;dispositivos y equipos_Software y aplicaciones,Departamento de Logística,1,2,4,7
-Plataforma de comercio electrónico,Procesos empresariales;funciones;servicios,Hardware;dispositivos y equipos_Software y aplicaciones_Personal,Departamento de Ventas,3,3,4,10
-Documento de políticas y procedimientos,Datos/Información,Infraestructura organizativa_Personal,Departamento de Calidad,1,3,1,5
-Red de área local (LAN),Procesos empresariales;funciones;servicios,Hardware;dispositivos y equipos_Personal,Departamento de TI,2,2,4,8
-Aplicación móvil de ventas,Procesos empresariales;funciones:servicios,Hardware;dispositivos y equipos_Software y aplicaciones,Departamento de Ventas,3,2,4,9
-Centro de datos,Procesos empresariales;funciones;servicios,Hardware;dispositivos y equipos_Personal,Departamento de TI,4,3,3,10
-Sitio web corporativo,Procesos empresariales;funciones;servicios,Hardware;dispositivos y equipos_Software y aplicaciones,Departamento de Marketing,1,3,4,8
+Activo,Categoria,Responsable,ValorIntegridad,ValorConfidencialidad,ValorDisponibilidad,ValorTotal
+Servidor de base de datos,Datos/Información,Administrador de Base de Datos,4,3,4,10
+Software de nóminas,Software,Responsable de Recursos Humanos,3,4,1,8
+Servidor de correo electrónico,Software,Administrador de Sistemas,2,3,3,8
+Servidor web,Software,Administrador de Sistemas,2,1,4,7
+Servidor de archivos,Hardware/Físico,Administrador de Sistemas,3,3,3,9
+Impresora,Hardware/Físico,Responsable de Soporte Técnico,2,1,1,4
+Ordenador portátil,Hardware/Físico,Empleado,2,3,1,6
+Servidor de aplicaciones,Software,Administrador de Sistemas,3,2,4,9
+Cámara de seguridad,Hardware/Físico,Responsable de Seguridad,2,2,3,7
+Dispositivo móvil,Hardware/Físico,Empleado,2,3,2,7
