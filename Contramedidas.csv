@@ -1,8 +1,0 @@
-Coste,FactorDeMitigacion,CategoriaMedida,Descripcion,Activo
-2,0.5,Correctiva,Programas ejecutables no modificables,Hardware/Físico
-3,0.8,Correctiva,Pentesting,Software
-1,0.3,DeApoyo,Bloqueo de sesión,Hardware/Físico
-1,0.3,Correctiva,Restricciones de uso de software,Software
-2,0.6,Correctiva,Copia de seguridad de sistemas de información,Datos/Información
-1,0.3,DeApoyo,Protección de la información de auditoría,Datos/Información
-1,0.2,Corporativa,Política y procedimientos de protección física y medioambiental,Hardware/Físico

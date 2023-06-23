@@ -1,0 +1,8 @@
+Coste,FactorDeMitigacion,CategoriaMedida,Descripcion,Activo
+2,0.5,Correctiva,Programas ejecutables no modificables,Hardware;dispositivos y equipos
+2,0.6,Correctiva,Formación sobre sensibilización en materia de seguridad,Personal
+3,0.5,Corporativa,Auditorías en el sistema se gestión de la seguridad de la información,Infraestructura organizativa
+3,0.5,Correctiva,Control de la divulgación de información,Personal
+4,0.8,Correctiva,Pentesting,Software y aplicaciones
+2,0.3,Corporativa,Políticas y procedimientos de respuesta a incidentes,Software y aplicaciones
+1,0.3,DeApoyo,Bloqueo de sesión,Hardware;dispositivos y equipos

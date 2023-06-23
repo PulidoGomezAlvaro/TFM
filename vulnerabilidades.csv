@@ -1,8 +1,0 @@
-﻿Codigo,Probabilidad,Impacto,Activo,Descripcion
-NATUR-01,1,9,Hardware/Físico,Posibilidad de incendio en un entorno confinado
-INDUS-05,2,4,Software,Defectos en el sistema que afectan a su funcionamiento
-INDUS-06,2,9,Hardware/Físico,Interrupción del suministro eléctrico
-WIL-05,3,8,Software,Enmascaramiento de la identidad
-ERR-04,2,6,Software,Errores de configuración
-ERR-15,3,6,Datos/Información,Alteración de la información
-WIL-11,3,8,Datos/Información,Acceso no autorizado

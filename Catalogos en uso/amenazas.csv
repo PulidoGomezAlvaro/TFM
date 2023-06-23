@@ -1,4 +1,4 @@
 Nombre,Descripcion,Vulnerabilidad,Origen,Integridad,Confidencialidad,Disponibilidad
 Fuego,Concentración de materias inflamables o explosivas en un entorno confinado,NATUR-01,Externo,0,0,1
 Interrupción,Avería desconexión o dimensionamiento incorrecto de la fuente de alimentación,INDUS-06,Interno,0,0,1
-Alteración de la información,Alteración accidental de la información aplicable a datos en general,ERR-15,Interno,0,0,1
+Errores operativos,Una persona ha cometido un error de funcionamiento de entrada o de utilización del hardware o del software,ERR-01,Interno,1,1,1
