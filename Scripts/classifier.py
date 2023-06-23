@@ -133,7 +133,7 @@ with onto:
     cramm = False
     cramm2 = False
     
-    with open('./infoDeContexto.csv', newline='', encoding='utf-8-sig') as csvfile:
+    with open('../Catalogos en uso/infoDeContexto.csv', newline='', encoding='utf-8-sig') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             if row['Metodologia'] == 'ITSRM':
@@ -151,7 +151,7 @@ with onto:
                 org.tieneApetitoDeRiesgo.append(row['ApetitoDeRiesgo'])
                      
 
-    with open('./vulnerabilidades.csv', newline='', encoding='utf-8-sig') as csvfile:
+    with open('../Catalogos en uso/vulnerabilidades.csv', newline='', encoding='utf-8-sig') as csvfile:
         reader = csv.DictReader(csvfile)
         activos = []
 
@@ -189,7 +189,7 @@ with onto:
                 vulnerabilidades_por_activo[activo] = []
             vulnerabilidades_por_activo[activo].append(vulnerabilidad)
 
-            with open('./Contramedidas.csv', newline='', encoding='utf-8-sig') as csvfile:
+            with open('../Catalogos en uso/Contramedidas.csv', newline='', encoding='utf-8-sig') as csvfile:
                 reader2 = csv.DictReader(csvfile)
               
                 for row2 in reader2:
@@ -323,7 +323,7 @@ with onto:
                 # Crear instancias de los activos afectados directa o indirectamente
                 activos = {}
 
-    with open('./activos.csv', newline='', encoding='utf-8-sig') as csvfile:
+    with open('../Catalogos en uso/activos.csv', newline='', encoding='utf-8-sig') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             #Creo instancias de los activos y les asigno todas sus data properties
@@ -504,7 +504,7 @@ with onto:
 
 
     #Compruebo el valor del riesgo total y del nivel de apetito de riesgo de la empresa para ver si es necesario llevar a cabo contramdedidas y calcular riesgos residuales o no
-    with open('./infoDeContexto.csv', newline='', encoding='utf-8-sig') as csvfile:
+    with open('../Catalogos en uso/infoDeContexto.csv', newline='', encoding='utf-8-sig') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             if magerit or cramm2:
@@ -532,10 +532,10 @@ with onto:
                             del riesgo.tieneNivelResidual[0]
 
         #Lógica de las amenazas: explotan una vulnerabilidad y todos los activos afectados por ella pierden valor de integridad, confidencialidad y disponibilidad
-        with open('./vulnerabilidades.csv', newline='', encoding='utf-8-sig') as csvfile:
+        with open('../Catalogos en uso/vulnerabilidades.csv', newline='', encoding='utf-8-sig') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
-                with open('./amenazas.csv', newline='', encoding='utf-8-sig') as csvfile:
+                with open('../Catalogos en uso/amenazas.csv', newline='', encoding='utf-8-sig') as csvfile:
                     reader2 = csv.DictReader(csvfile)
                     for row2 in reader2:
                         if str(row['Codigo']) == str(row2['Vulnerabilidad']):
