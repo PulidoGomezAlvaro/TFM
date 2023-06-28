@@ -138,6 +138,12 @@ with onto:
         for row in reader:
             if row['Metodologia'] == 'ITSRM':
                 itsrm = True
+            elif row['Metodologia'] == 'NIST SP 800-30':
+                itsrm = True
+            elif row['Metodologia'] == 'ISO/IEC 27005':
+                itsrm = True
+            elif row['Metodologia'] == 'EBIOS':
+                itsrm = True
             elif row['Metodologia'] == 'MAGERIT':
                 magerit = True
             elif row['Metodologia'] == 'CRAMM Rapido':
@@ -199,7 +205,7 @@ with onto:
                             # Crea una instancia de la clase Medida con los valores correspondientes 
                             medida = onto.MedidaDeSeguridad(URIRef("http://www.tfm.com/ontologies/tfm.owl#" + row2['Descripcion']))
                             medida.medidaTieneDescripcion.append(row2['Descripcion'])
-                            medida.tieneCoste.append(float(row2['Coste']))  
+                            medida.tieneCoste.append(int(row2['Coste']))  
                             medida.tieneFactorDeMitigacion.append(float(row2['FactorDeMitigacion'])) 
                             protegeCategorias[medida] = row2['Activo']
                             if row['Activo'] not in medidas_por_activo:
@@ -244,7 +250,7 @@ with onto:
                             # Crea una instancia de la clase Medida con los valores correspondientes 
                             medida = onto.MedidaDeSeguridad(URIRef("http://www.tfm.com/ontologies/tfm.owl#" + row2['Descripcion']))
                             medida.medidaTieneDescripcion.append(row2['Descripcion'])
-                            medida.tieneCoste.append(float(row2['Coste']))  
+                            medida.tieneCoste.append(int(row2['Coste']))  
                             medida.tieneFactorDeMitigacion.append(float(row2['FactorDeMitigacion'])) 
                             protegeCategorias[medida] = row2['Activo']
 
@@ -287,7 +293,7 @@ with onto:
                             # Crea una instancia de la clase Medida con los valores correspondientes 
                             medida = onto.MedidaDeSeguridad(URIRef("http://www.tfm.com/ontologies/tfm.owl#" + row2['Descripcion']))
                             medida.medidaTieneDescripcion.append(row2['Descripcion'])
-                            medida.tieneCoste.append(float(row2['Coste']))  
+                            medida.tieneCoste.append(int(row2['Coste']))  
                             medida.tieneFactorDeMitigacion.append(float(row2['FactorDeMitigacion'])) 
                             protegeCategorias[medida] = row2['Activo']
 
@@ -334,10 +340,10 @@ with onto:
                 activos[activo].tieneResponsable.append(row['Responsable'])
                 activos[activo].esActivoPrincipal.append(True)
                 activos[activo].perteneceALaCategoria.append(row['Categoria'])
-                activos[activo].tieneValordeIntegridad.append(row['ValorIntegridad'])
-                activos[activo].tieneValordeConfidencialidad.append(row['ValorConfidencialidad'])
-                activos[activo].tieneValordeDisponibilidad.append(row['ValorDisponibilidad'])
-                activos[activo].tieneValorTotal.append(row['ValorTotal'])
+                activos[activo].tieneValordeIntegridad.append(float(row['ValorIntegridad']))
+                activos[activo].tieneValordeConfidencialidad.append(float(row['ValorConfidencialidad']))
+                activos[activo].tieneValordeDisponibilidad.append(float(row['ValorDisponibilidad']))
+                activos[activo].tieneValorTotal.append(float(row['ValorTotal']))
 
                 if row['DependeDe']:
                     activos_dependientes = row['DependeDe'].split('_')
@@ -380,10 +386,10 @@ with onto:
                 activos[activo].activoTieneNombre.append(row['Activo'])
                 activos[activo].tieneResponsable.append(row['Responsable'])
                 activos[activo].perteneceALaCategoria.append(row['Categoria'])
-                activos[activo].tieneValordeIntegridad.append(row['ValorIntegridad'])
-                activos[activo].tieneValordeConfidencialidad.append(row['ValorConfidencialidad'])
-                activos[activo].tieneValordeDisponibilidad.append(row['ValorDisponibilidad'])
-                activos[activo].tieneValorTotal.append(row['ValorTotal'])
+                activos[activo].tieneValordeIntegridad.append(float(row['ValorIntegridad']))
+                activos[activo].tieneValordeConfidencialidad.append(float(row['ValorConfidencialidad']))
+                activos[activo].tieneValordeDisponibilidad.append(float(row['ValorDisponibilidad']))
+                activos[activo].tieneValorTotal.append(float(row['ValorTotal']))
 
                 #si la categoria del activo se ve afectada por una vulnerabilidad, este activo se relaciona con la vulnerabilidad
                 if row['Categoria'] in vulnerabilidades_por_activo and row['Categoria'] in activos_afectados:
@@ -403,9 +409,9 @@ with onto:
                 activos[activo].tieneResponsable.append(row['Responsable'])
                 activos[activo].esActivoPrimario.append(True)
                 activos[activo].perteneceALaCategoria.append(row['Categoria'])
-                activos[activo].tieneValordeIntegridad.append(row['ValorIntegridad'])
-                activos[activo].tieneValordeConfidencialidad.append(row['ValorConfidencialidad'])
-                activos[activo].tieneValordeDisponibilidad.append(row['ValorDisponibilidad'])
+                activos[activo].tieneValordeIntegridad.append(float(row['ValorIntegridad']))
+                activos[activo].tieneValordeConfidencialidad.append(float(row['ValorConfidencialidad']))
+                activos[activo].tieneValordeDisponibilidad.append(float(row['ValorDisponibilidad']))
                 activos[activo].tieneValorTotal.append(row['ValorTotal'])
 
                 if row['ActivosDeSoporte']:

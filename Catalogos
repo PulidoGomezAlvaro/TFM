@@ -20,7 +20,7 @@ WIL-05,3,8,Software y aplicaciones,Enmascaramiento de la identidad
 WIL-14,2,9,Infraestructura organizativa,Espionaje
 SR-07,3,6,Infraestructura organizativa,Fallo de aislamiento
 
-VULNERABILIDADES Escenario 1: CRAMM Rapido
+VULNERABILIDADES Escenario 3: CRAMM Rapido
 Codigo,Probabilidad,Impacto,Activo,Descripcion
 NATUR-01,1,9,Hardware/Físico,Posibilidad de incendio en un entorno confinado
 INDUS-05,2,4,Software,Defectos en el sistema que afectan a su funcionamiento
@@ -30,7 +30,7 @@ ERR-04,2,6,Software,Errores de configuración
 ERR-15,3,6,Datos/Información,Alteración de la información
 WIL-11,3,8,Datos/Información,Acceso no autorizado
 
-VULNERABILIDADES Escenario 3: CRAMM Completo
+VULNERABILIDADES Escenario 1: CRAMM Completo
 Codigo,Probabilidad,Impacto,Activo,Descripcion
 NATUR-01,MB,MA,Hardware/Físico,Posibilidad de incendio en un entorno confinado
 INDUS-05,B,A,Software,Defectos en el sistema que afectan a su funcionamiento
