@@ -1,0 +1,568 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.tfm.com/ontologies/tfm.owl#"
+     xml:base="http://www.tfm.com/ontologies/tfm.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.tfm.com/ontologies/tfm.owl">
+        <rdfs:comment>Ontology that recreates an interoperable risk management methodology</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#afectaA -->
+
+    <owl:ObjectProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#afectaA">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.tfm.com/ontologies/tfm.owl#esVulnerableA"/>
+        <rdfs:range rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esExplotadaPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esExplotadaPor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.tfm.com/ontologies/tfm.owl#explota"/>
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Vulnerabilidad"/>
+        <rdfs:range rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Amenaza"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esGeneradoPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esGeneradoPor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.tfm.com/ontologies/tfm.owl#genera"/>
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Riesgo"/>
+        <rdfs:range rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Vulnerabilidad"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esProtegidoPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esProtegidoPor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.tfm.com/ontologies/tfm.owl#protege"/>
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+        <rdfs:range rdf:resource="http://www.tfm.com/ontologies/tfm.owl#MedidaDeSeguridad"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esReducidoPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esReducidoPor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.tfm.com/ontologies/tfm.owl#reduce"/>
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Riesgo"/>
+        <rdfs:range rdf:resource="http://www.tfm.com/ontologies/tfm.owl#MedidaDeSeguridad"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esVulnerableA -->
+
+    <owl:ObjectProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esVulnerableA">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#explota -->
+
+    <owl:ObjectProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#explota">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Amenaza"/>
+        <rdfs:range rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Vulnerabilidad"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#genera -->
+
+    <owl:ObjectProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#genera">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Vulnerabilidad"/>
+        <rdfs:range rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Riesgo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#protege -->
+
+    <owl:ObjectProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#protege">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#MedidaDeSeguridad"/>
+        <rdfs:range rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#reduce -->
+
+    <owl:ObjectProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#reduce">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#MedidaDeSeguridad"/>
+        <rdfs:range rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Riesgo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneActivoDeSoporte -->
+
+    <owl:ObjectProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneActivoDeSoporte">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+        <rdfs:range rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneActivoDependiente -->
+
+    <owl:ObjectProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneActivoDependiente">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+        <rdfs:range rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneActivoPrimario -->
+
+    <owl:ObjectProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneActivoPrimario">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+        <rdfs:range rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneActivoPrincipal -->
+
+    <owl:ObjectProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneActivoPrincipal">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+        <rdfs:range rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#activoTieneNombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#activoTieneNombre">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#amenazaTieneDescripcion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#amenazaTieneDescripcion">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Amenaza"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#amenazaTieneNombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#amenazaTieneNombre">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Amenaza"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esActivoDeSoporte -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esActivoDeSoporte">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esActivoDependiente -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esActivoDependiente">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esActivoPrimario -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esActivoPrimario">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esActivoPrincipal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esActivoPrincipal">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esAmenazaExterna -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esAmenazaExterna">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Amenaza"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esAmenazaInterna -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esAmenazaInterna">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Amenaza"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esCorporativa -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esCorporativa">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#MedidaDeSeguridad"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esCorrectiva -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esCorrectiva">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#MedidaDeSeguridad"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esDeApoyo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esDeApoyo">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#MedidaDeSeguridad"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esDisuasion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esDisuasion">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#MedidaDeSeguridad"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esEliminacion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esEliminacion">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#MedidaDeSeguridad"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esPrevencion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esPrevencion">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#MedidaDeSeguridad"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esRiesgoAlto -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esRiesgoAlto">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Riesgo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esRiesgoBajo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esRiesgoBajo">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Riesgo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#esRiesgoMedio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#esRiesgoMedio">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Riesgo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#medidaTieneDescripcion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#medidaTieneDescripcion">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#MedidaDeSeguridad"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#organizacionTieneNombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#organizacionTieneNombre">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Organizacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#perteneceALaCategoria -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#perteneceALaCategoria">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#protegeCategorias -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#protegeCategorias">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#MedidaDeSeguridad"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneApetitoDeRiesgo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneApetitoDeRiesgo">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Organizacion"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneCodigo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneCodigo">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Vulnerabilidad"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneCoste -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneCoste">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#MedidaDeSeguridad"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneFactorDeMitigacion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneFactorDeMitigacion">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#MedidaDeSeguridad"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneImpacto -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneImpacto">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Vulnerabilidad"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneNivel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneNivel">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Riesgo"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneNivelResidual -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneNivelResidual">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Riesgo"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneProbabilidad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneProbabilidad">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Vulnerabilidad"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneResponsable -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneResponsable">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneRiesgoGlobal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneRiesgoGlobal">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Organizacion"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneRiesgoResidual -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneRiesgoResidual">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Organizacion"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneValorTotal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneValorTotal">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneValordeConfidencialidad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneValordeConfidencialidad">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneValordeDisponibilidad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneValordeDisponibilidad">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#tieneValordeIntegridad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#tieneValordeIntegridad">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#vulnerabilidadTieneDescripcion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfm.com/ontologies/tfm.owl#vulnerabilidadTieneDescripcion">
+        <rdfs:domain rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Vulnerabilidad"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#Activo -->
+
+    <owl:Class rdf:about="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#Amenaza -->
+
+    <owl:Class rdf:about="http://www.tfm.com/ontologies/tfm.owl#Amenaza">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tfm.com/ontologies/tfm.owl#afectaA"/>
+                <owl:someValuesFrom rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#MedidaDeSeguridad -->
+
+    <owl:Class rdf:about="http://www.tfm.com/ontologies/tfm.owl#MedidaDeSeguridad"/>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#Organizacion -->
+
+    <owl:Class rdf:about="http://www.tfm.com/ontologies/tfm.owl#Organizacion"/>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#Riesgo -->
+
+    <owl:Class rdf:about="http://www.tfm.com/ontologies/tfm.owl#Riesgo"/>
+    
+
+
+    <!-- http://www.tfm.com/ontologies/tfm.owl#Vulnerabilidad -->
+
+    <owl:Class rdf:about="http://www.tfm.com/ontologies/tfm.owl#Vulnerabilidad">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tfm.com/ontologies/tfm.owl#afectaA"/>
+                <owl:someValuesFrom rdf:resource="http://www.tfm.com/ontologies/tfm.owl#Activo"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
