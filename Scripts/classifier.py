@@ -3,7 +3,7 @@ from owlready2 import *
 from rdflib import URIRef
 import csv
 
-onto_path.append("/Users/alvaropulidogomez/Downloads/TFM/PROTEGE")
+onto_path.append("/Users/alvaropulidogomez/TFM/")
 
 onto = get_ontology("http://www.tfm.com/ontologies/tfm.owl").load()
 

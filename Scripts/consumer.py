@@ -29,10 +29,10 @@ while True:
     amenaza = amenaza.strip('"')
 
     # Escribir cada cadena en su respectivo archivo CSV
-    with open('vulnerabilidades.csv', 'a') as file:
-        file.write(vulnerabilidad + '\n')
-    with open('amenazas.csv', 'a') as file:
-        file.write(amenaza + '\n')
+    with open('../Catalogos en uso/vulnerabilidades.csv', 'a') as file:
+        file.write('\n' + vulnerabilidad)
+    with open('../Catalogos en uso/amenazas.csv', 'a') as file:
+        file.write('\n' + amenaza)
 
     os.system('python classifier.py')
 
